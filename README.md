@@ -1,4 +1,4 @@
-# Trabalho Pablo e Felipe
+# Trabalho Curriculo - Pablo
 
 # Getting Started with Create React App
 
