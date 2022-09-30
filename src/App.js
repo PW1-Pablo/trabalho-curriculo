@@ -8,7 +8,7 @@ const App = () => {
 
   const [data, setData] = useState([])
 
-
+  const [creating, setCreating] = useState(true)
   const [editing, setEditing] = useState(false)
 
   useEffect(() => {
@@ -26,11 +26,12 @@ const App = () => {
 
   const editingTrue = () => {
     setEditing(true)
+    setCreating(false)
   }
 
   console.log(data.name)
 
-  if(!editing && data == null) {
+  if(creating) {
     return(
       <input type="button" value="Criar Curriculo" onClick={editingTrue} />
     )
@@ -40,12 +41,11 @@ const App = () => {
           <CurriculumForm onSave={updateForm} />
         </div>
       )
-  } 
-  
-  if (data != null) {
+  } else {
     return(
       <div>
         <CurriculumFormat data={data} />
+        <input type="button" value="Editar" onClick={editingTrue} />
       </div>
     )
   }
