@@ -27,6 +27,7 @@ const App = () => {
   const editingTrue = () => {
     setEditing(true)
     setCreating(false)
+    setData([])
   }
 
   console.log(data.name)
